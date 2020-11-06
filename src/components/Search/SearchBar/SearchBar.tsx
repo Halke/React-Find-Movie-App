@@ -6,7 +6,7 @@ function SearchBar() {
     const [searchTerm, setSearchTerm] = useState('')
 
     useEffect(() => {
-
+        
     }, [searchTerm])
 
     function handleOnChange(event : any) {   
@@ -16,11 +16,13 @@ function SearchBar() {
 
     return (
         <div className='search-bar'>
-            <div className='search-bar__'>
-                <img 
-                    className='search-bar__icon' 
-                    src={`${process.env.PUBLIC_URL}/assets/icons/search-icon.png`}
-                />
+            <div className='search-bar__input-section'>
+                <div className='search-bar__icon-container'>
+                    <img 
+                        className='search-bar__icon' 
+                        src={`${process.env.PUBLIC_URL}/assets/icons/search-icon.png`}
+                    />
+                </div>
                 <input
                     className='search-bar__input' 
                     onChange={handleOnChange} 
@@ -28,6 +30,9 @@ function SearchBar() {
                     type='text' 
                     placeholder='Search here...'
                 />
+            </div>
+            <div className='search-bar__search-content'>
+                
             </div>
         </div>
     )
