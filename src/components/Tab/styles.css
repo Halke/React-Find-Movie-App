@@ -1,0 +1,9 @@
+.tab {
+  width: 100%;
+}
+
+.tab__change-tab-btns {
+  display: flex;
+  justify-content: flex-start;
+  margin: 20px auto 20px 30px;
+}
