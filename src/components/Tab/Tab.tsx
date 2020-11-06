@@ -1,5 +1,6 @@
 import React, {useState} from 'react'
 import TabButton from '../Buttons/TabButton/TabButton'
+import SearchBar from '../Search/SearchBar/SearchBar'
 import './styles.css'
 
 function Tab() {
@@ -27,7 +28,7 @@ function Tab() {
 
             {/* Search Bar Section */}
             <div className="tab__search-bar">
-
+                <SearchBar />
             </div>
 
             {/* Tab za prikaz sadrzaja */}

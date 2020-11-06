@@ -2,6 +2,12 @@
   width: 100%;
 }
 
+.tab__search-bar,
+.tab__content,
+.tab__change-tab-btns {
+  width: 100%;
+}
+
 .tab__change-tab-btns {
   display: flex;
   justify-content: flex-start;
