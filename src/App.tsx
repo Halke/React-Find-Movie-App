@@ -5,15 +5,15 @@ import './App.css'
 
 function App() {
   return (
-    <Router>
-      <div className="App">
-          <Switch>
-            <Route exact path="/" component={Tab}/>
-            <Route exact path="/movie/:movieId" />
-            <Route exact path="/tv/:tvId" />
-          </Switch>
-      </div>
-    </Router>
+      <Router>
+        <div className="App">
+            <Switch>
+              <Route exact path="/" component={Tab}/>
+              <Route exact path="/movie/:movieId" />
+              <Route exact path="/tv/:tvId" />
+            </Switch>
+        </div>
+      </Router>
   )
 }
 

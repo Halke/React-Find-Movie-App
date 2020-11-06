@@ -1,13 +1,10 @@
-import React, {useState, useEffect} from 'react'
+import React, {useState} from 'react'
+import SearchContent from '../SearchContent/SearchContent'
 import './styles.css'
 
 function SearchBar() {
 
     const [searchTerm, setSearchTerm] = useState('')
-
-    useEffect(() => {
-        
-    }, [searchTerm])
 
     function handleOnChange(event : any) {   
         const {value} = event.target
@@ -32,7 +29,7 @@ function SearchBar() {
                 />
             </div>
             <div className='search-bar__search-content'>
-                
+                <SearchContent searchTerm={searchTerm} contentType='movie' />
             </div>
         </div>
     )
