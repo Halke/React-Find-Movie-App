@@ -1,12 +1,17 @@
-import React, {useState} from 'react'
+import React from 'react'
 
-function TabButton({btnText, isActive}) {
+interface ButtonInfo {
+    buttonText: string;
+    isActive: boolean
+};
 
-    const [active, setActive] = useState(isActive)
+function TabButton(props:ButtonInfo) {
 
     return (
-        <div>
-            
+        <div className="tab-button">
+            <button className={props.isActive ? "tab-button__active" : "tab-button__inactive"}>
+                {props.buttonText}
+            </button>
         </div>
     )
 }
