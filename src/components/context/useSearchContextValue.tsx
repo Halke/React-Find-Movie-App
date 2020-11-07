@@ -9,7 +9,7 @@ function useSearchContextValue(): SearchContextData {
 
     const fetchData = useCallback(() => {
         axios.get('https://api.themoviedb.org/3/search/' + contentType + '?api_key=d12848de02e2a36cbdfe60e9860f6f6c&language=en-US&query=' + searchTerm + '&page=1&include_adult=false')
-        .then(res => setSearchResults(res.data))
+        .then(res => setSearchResults(res.data.results))
         .catch(err => console.log('ERROR: ', err))
     }, [setSearchResults])
 

@@ -1,5 +1,6 @@
 import React, {useState, useCallback} from 'react'
 import TabButton from '../Buttons/TabButton/TabButton'
+import useContentTypeChange from '../context/useContentTypeChange'
 import SearchBar from '../Search/SearchBar/SearchBar'
 import './styles.css'
 
@@ -10,6 +11,7 @@ const Tab: React.FC<any> = () => {
 
 
     function handleTabChange(){
+        useContentTypeChange()
         setMoviesActive(!moviesActive)
     }
 
