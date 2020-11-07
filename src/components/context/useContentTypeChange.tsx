@@ -6,7 +6,7 @@ function useContentTypeChange() {
 
     useEffect(() => {
         changeContentType()
-    }, [changeContentType])
+    }, [])
 }
 
 export default useContentTypeChange
