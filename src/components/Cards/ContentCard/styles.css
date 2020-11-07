@@ -1,0 +1,35 @@
+.content-card {
+  width: 300px;
+  min-height: 400px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.content-card__title {
+  min-height: 50px;
+  width: 100%;
+  text-align: center;
+  background-color: #f4f4ed;
+}
+
+.content-card__title h2 {
+  font-size: 20px;
+  font-family: "Open Sans", sans-serif;
+  font-style: italic;
+  color: #5e239d;
+}
+
+.content-card__movie,
+.content-card__tv {
+  border: 2px solid;
+}
+
+.content-card__movie {
+  border-color: #5e239d;
+}
+
+.content-card__tv {
+  border-color: #00f0b5;
+}
