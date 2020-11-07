@@ -21,12 +21,17 @@ function useSearchContextValue(): SearchContextData {
         }
     }, [setContentType])
 
+    const changeSearchTerm = useCallback((newSearchTerm: string) => {
+        setSearchTerm(newSearchTerm)
+    }, [setSearchTerm, searchTerm])
+
     return {
         contentType,
         searchTerm,
         searchResults,
         fetchData,
-        changeContentType
+        changeContentType,
+        changeSearchTerm
     }
 }
 

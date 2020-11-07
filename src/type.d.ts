@@ -15,6 +15,7 @@ interface SearchContextData{
     searchTerm: string;
     searchResults: ISearchResult[];
     fetchData: () => void;
-    changeContentType: () => void
+    changeContentType: () => void;
+    changeSearchTerm: (newSearchTerm: string) => void
 }
 

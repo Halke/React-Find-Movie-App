@@ -5,7 +5,8 @@ export const searchContextDefaultValue: SearchContextData = {
     searchTerm: '',
     searchResults: [],
     fetchData: () => null,
-    changeContentType: () => null
+    changeContentType: () => null,
+    changeSearchTerm: (newSearchTerm: string) => null
 }
 
 
