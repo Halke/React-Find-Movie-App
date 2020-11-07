@@ -1,18 +1,25 @@
-import React, {useState, useCallback} from 'react'
+import React, {useState, useContext} from 'react'
 import TabButton from '../Buttons/TabButton/TabButton'
 import useContentTypeChange from '../context/useContentTypeChange'
+import {SearchContext} from '../context/SearchContext'
 import SearchBar from '../Search/SearchBar/SearchBar'
 import './styles.css'
 
 
-const Tab: React.FC<any> = () => {
+const Tab = () => {
 
-    const [moviesActive, setMoviesActive] = useState(true)
+    const {contentType, changeContentType} = useContext(SearchContext)
 
+    // const [moviesActive, setMoviesActive] = useState(true)
 
-    function handleTabChange(){
-        useContentTypeChange()
-        setMoviesActive(!moviesActive)
+    //useContentTypeChange()
+
+    function handleTabChange(changeTo: string){
+        if(contentType === 'movie' && changeTo === 'tv'){
+            changeContentType()
+        }else if(contentType === 'tv' && changeTo === 'movie'){
+            changeContentType()
+        }
     }
 
     return (
@@ -21,16 +28,16 @@ const Tab: React.FC<any> = () => {
             <div className="tab__change-tab-btns">
                 {/* Movies TAB */}
                 <TabButton 
-                    onClick={() => handleTabChange()} 
+                    onClick={() => handleTabChange('movie')} 
                     buttonText="Movies" 
-                    isActive={moviesActive ? true : false} 
+                    isActive={contentType === 'movie' ? true : false} 
                 />
 
                 {/* TV Shows TAB */}
                 <TabButton 
-                    onClick={() => handleTabChange()} 
+                    onClick={() => handleTabChange('tv')} 
                     buttonText="TV Shows" 
-                    isActive={moviesActive ? false : true} 
+                    isActive={contentType === 'tv' ? true : false} 
                 />
             </div>
 

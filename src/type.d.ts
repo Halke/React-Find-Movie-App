@@ -1,6 +1,7 @@
 interface ISearchResult{
     id: Number;
-    title: string;
+    title?: string;
+    name?: string;
     overview: string;
     poster_path?: string;
     video?: boolean;
