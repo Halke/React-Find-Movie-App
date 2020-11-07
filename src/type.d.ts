@@ -1,25 +1,19 @@
-interface ISearch {
-    coverImage?: string;
-    trailerVideo?: string;
+interface ISearchResult{
     name: string;
     overview: string;
+    coverImage?: string;
+    trailerVideo?: string;
+    duration?: number;
     releaseDate: string;
-    genre: string;
-    revenue: string;
-    duration: string
+    numOfSeasons?: string;
+    revenue?: string
 }
-  
-type SearchState = {
+
+interface SearchContextData{
     contentType: string;
     searchTerm: string;
-    results: ISearch[]
+    searchResults: ISearchResult[];
+    fetchData: () => void;
+    changeContentType: () => void
 }
-  
-type SearchAction = {
-    type: string;
-    contentType: string;
-    searchTerm: string;
-    results: IArticle
-}
-  
-type DispatchType = (args: SearchAction) => SearchAction
+
