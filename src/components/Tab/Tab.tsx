@@ -1,11 +1,13 @@
-import React, {useState, useContext} from 'react'
+import React, {useState, useCallback} from 'react'
 import TabButton from '../Buttons/TabButton/TabButton'
 import SearchBar from '../Search/SearchBar/SearchBar'
 import './styles.css'
 
-function Tab() {
+
+const Tab: React.FC<any> = () => {
 
     const [moviesActive, setMoviesActive] = useState(true)
+
 
     function handleTabChange(){
         setMoviesActive(!moviesActive)
