@@ -1,6 +1,7 @@
 import React, {useState, useEffect, useContext} from 'react'
 import SearchContent from '../SearchContent/SearchContent'
 import {SearchContext} from '../../context/SearchContext'
+import useSearchTermChange from '../../context/useSearchTermChange'
 import './styles.css'
 
 function SearchBar() {
@@ -15,7 +16,7 @@ function SearchBar() {
     }
 
     useEffect(() => {
-        searchTerm = search
+        useSearchTermChange(search)
     }, [search])
 
     return (
