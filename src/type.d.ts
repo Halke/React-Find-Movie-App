@@ -1,12 +1,13 @@
 interface ISearchResult{
-    name: string;
+    id: Number;
+    title: string;
     overview: string;
-    coverImage?: string;
-    trailerVideo?: string;
-    duration?: number;
-    releaseDate: string;
+    poster_path?: string;
+    video?: boolean;
+    runtime?: Number;
+    release_date: string;
     numOfSeasons?: string;
-    revenue?: string
+    revenue?: BigInt
 }
 
 interface SearchContextData{
