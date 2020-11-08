@@ -1,11 +1,11 @@
 import {useContext, useEffect} from 'react'
 import {SearchContext} from './SearchContext'
 
-function useContentTypeChange() {
+function useContentTypeChange(changeTo: string) {
     const { changeContentType } = useContext(SearchContext)
 
     useEffect(() => {
-        changeContentType()
+        changeContentType(changeTo)
     }, [])
 }
 
