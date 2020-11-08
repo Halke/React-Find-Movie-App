@@ -7,7 +7,7 @@ import './styles.css'
 function SearchContent() {
 
     // Upotreba globalnog state-a
-    const {contentType, searchResults, searchTerm, searchOnFocus, fetchData} = useContext(SearchContext)
+    const {contentType, searchResults, searchTerm, searchOnFocus, fetchData, changeSearchOnFocus} = useContext(SearchContext)
 
 
     useEffect(() => {

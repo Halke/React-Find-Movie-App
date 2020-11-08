@@ -1,11 +1,11 @@
-import React, {useContext} from 'react'
+import React, {useContext, useEffect} from 'react'
 import {SearchContext} from '../../context/SearchContext'
 import './styles.css'
 
 
 function SearchBar() {
 
-    const {searchTerm, changeSearchTerm, changeSearchOnFocus} = useContext(SearchContext)
+    const {searchTerm, searchOnFocus, changeSearchTerm, changeSearchOnFocus} = useContext(SearchContext)
 
     //const [search, setSearch] = useState<string>(searchTerm)
 
@@ -13,6 +13,14 @@ function SearchBar() {
         const {value} = event.target
         changeSearchTerm(value)
     }
+
+    useEffect(() => {
+        if(searchTerm.length >= 3 && !searchOnFocus){
+            changeSearchOnFocus()
+        }else if(searchTerm.length < 3 && searchOnFocus){
+            changeSearchOnFocus()
+        }
+    }, [searchTerm])
 
     return (
         <div className='search-bar'>
@@ -24,7 +32,7 @@ function SearchBar() {
                     />
                 </div>
                 <input
-                    onFocus={changeSearchOnFocus}
+                    // onFocus={changeSearchOnFocus}
                     // onBlur={changeSearchOnFocus}
                     className='search-bar__input' 
                     onChange={handleOnChange} 
