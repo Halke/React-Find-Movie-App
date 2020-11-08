@@ -5,6 +5,7 @@ function useSearchContextValue(): SearchContextData {
     const [searchResults, setSearchResults] = useState<ISearchResult[]>([])
     const [contentType, setContentType] = useState<string>('movie')
     const [searchTerm, setSearchTerm] = useState<string>('')
+    const [searchOnFocus, setSearchOnFocus] = useState<boolean>(false)
 
 
     // Funkcija za dohvatanje podataka onda kad pojam u search baru ima
@@ -20,12 +21,8 @@ function useSearchContextValue(): SearchContextData {
 
 
     // Funkcija za promjenu tipa contenta ovisno o izabranom tabu
-    const changeContentType = useCallback(() => {
-        if(contentType === 'movie'){
-            setContentType('tv')
-        }else{
-            setContentType('movie')
-        }
+    const changeContentType = useCallback((changeTo: string) => {
+        setContentType(changeTo)
     }, [contentType])
 
     // Funkcija za azuriranje search pojma unutar globalnog state-a
@@ -34,13 +31,19 @@ function useSearchContextValue(): SearchContextData {
     }, [searchTerm])
 
 
+    const changeSearchOnFocus = useCallback(() => {
+        setSearchOnFocus(!searchOnFocus)
+    }, [searchOnFocus])
+
     return {
         contentType,
         searchTerm,
         searchResults,
+        searchOnFocus,
         fetchData,
         changeContentType,
-        changeSearchTerm
+        changeSearchTerm,
+        changeSearchOnFocus
     }
 }
 

@@ -4,9 +4,11 @@ export const searchContextDefaultValue: SearchContextData = {
     contentType: 'movie',
     searchTerm: '',
     searchResults: [],
+    searchOnFocus: false,
     fetchData: () => null,
-    changeContentType: () => null,
-    changeSearchTerm: (newSearchTerm: string) => null
+    changeContentType: (changeTo: string) => null,
+    changeSearchTerm: (newSearchTerm: string) => null,
+    changeSearchOnFocus: () => null
 }
 
 

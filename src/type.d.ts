@@ -15,8 +15,10 @@ interface SearchContextData{
     contentType: string;
     searchTerm: string;
     searchResults: ISearchResult[];
+    searchOnFocus: boolean;
     fetchData: () => void;
-    changeContentType: () => void;
-    changeSearchTerm: (newSearchTerm: string) => void
+    changeContentType: (changeTo: string) => void;
+    changeSearchTerm: (newSearchTerm: string) => void;
+    changeSearchOnFocus: () => void
 }
 
