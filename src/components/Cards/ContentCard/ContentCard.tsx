@@ -6,7 +6,7 @@ import './styles.css'
 interface Props{
     imageUrl: string | undefined;
     title: string | undefined;
-    id: Number
+    id: number | string
 }
 
 function ContentCard({imageUrl, title, id}: Props) {
@@ -15,12 +15,7 @@ function ContentCard({imageUrl, title, id}: Props) {
     const history = useHistory()
 
     return (
-        <div 
-            className={
-                'content-card ' + contentType === 'movie' 
-                ? 
-                'content-card__movie' : 'content-card__tv'}
-        >
+        <div className='content-card'>
             <button 
                 className='content-card__image-link'
                 onClick={() => history.push('/' + contentType + '/' + id, {from: 'ContentCard'})}
