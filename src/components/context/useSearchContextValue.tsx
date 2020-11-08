@@ -3,7 +3,7 @@ import axios from 'axios'
 
 function useSearchContextValue(): SearchContextData {
     const [searchResults, setSearchResults] = useState<ISearchResult[]>([])
-    const [contentType, setContentType] = useState<string>('movie')
+    const [contentType, setContentType] = useState<string>('tv')
     const [searchTerm, setSearchTerm] = useState<string>('')
     const [searchOnFocus, setSearchOnFocus] = useState<boolean>(false)
 

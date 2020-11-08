@@ -1,7 +1,7 @@
 import {createContext} from 'react'
 
 export const searchContextDefaultValue: SearchContextData = {
-    contentType: 'movie',
+    contentType: 'tv',
     searchTerm: '',
     searchResults: [],
     searchOnFocus: false,
