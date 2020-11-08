@@ -6,7 +6,7 @@ import './styles.css'
 
 function TabContent() {
 
-    const {searchOnFocus, contentType} = useContext(SearchContext)
+    const {searchOnFocus} = useContext(SearchContext)
 
     function renderSearchContent(){
         return <SearchContent />

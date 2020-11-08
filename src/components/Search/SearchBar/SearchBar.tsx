@@ -1,7 +1,7 @@
-import React, {useState, useEffect, useContext} from 'react'
-import SearchContent from '../SearchContent/SearchContent'
+import React, {useContext} from 'react'
 import {SearchContext} from '../../context/SearchContext'
 import './styles.css'
+
 
 function SearchBar() {
 
@@ -9,7 +9,7 @@ function SearchBar() {
 
     //const [search, setSearch] = useState<string>(searchTerm)
 
-    function handleOnChange(event : any) {   
+    function handleOnChange(event: any) {   
         const {value} = event.target
         changeSearchTerm(value)
     }
@@ -30,9 +30,6 @@ function SearchBar() {
                     type='text' 
                     placeholder='Search here...'
                 />
-            </div>
-            <div className='search-bar__search-content'>
-                <SearchContent />
             </div>
         </div>
     )
