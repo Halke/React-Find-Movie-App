@@ -28,18 +28,18 @@ const Tab = () => {
         <div className="tab">
             {/* Buttons za mijenjanje tabova */}
             <div className="tab__change-tab-btns">
-                {/* Movies TAB */}
-                <TabButton 
-                    onClick={() => handleTabChange('movie')} 
-                    buttonText="Movies" 
-                    isActive={contentType === 'movie' ? true : false} 
-                />
-
                 {/* TV Shows TAB */}
                 <TabButton 
                     onClick={() => handleTabChange('tv')} 
                     buttonText="TV Shows" 
                     isActive={contentType === 'tv' ? true : false} 
+                />
+
+                {/* Movies TAB */}
+                <TabButton 
+                    onClick={() => handleTabChange('movie')} 
+                    buttonText="Movies" 
+                    isActive={contentType === 'movie' ? true : false} 
                 />
             </div>
 
