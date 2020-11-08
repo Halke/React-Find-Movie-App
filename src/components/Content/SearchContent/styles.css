@@ -1,8 +1,5 @@
 .search-content {
   width: 94%;
-}
-
-.search-content {
   display: flex;
   flex-basis: 100%;
   flex-wrap: wrap;
