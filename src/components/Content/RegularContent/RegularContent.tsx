@@ -1,4 +1,4 @@
-import React, {ReactNode, useContext, useEffect, useState} from 'react'
+import React, {useContext, useEffect, useState} from 'react'
 import ContentCard from '../../Cards/ContentCard/ContentCard'
 import {SearchContext} from '../../context/SearchContext'
 import axios from 'axios'
@@ -6,7 +6,7 @@ import './styles.css'
 
 function RegularContent() {
 
-    const {contentType} = useContext(SearchContext)
+    const {searchOnFocus, contentType} = useContext(SearchContext)
 
     const [regularContent, setRegularContent] = useState<ISearchResult[]>([])
 
@@ -18,38 +18,18 @@ function RegularContent() {
     }, [contentType])
 
 
-    function renderRegularContent(): any{
-        if(regularContent.length <= 10){
-            regularContent.map((content, index) => {
-                const contentTitle = contentType === 'movie' ? content.title : content.name
-                return (
-                    <ContentCard 
-                        key={index} 
-                        title={contentTitle} 
-                        imageUrl={content.poster_path} 
-                        id={content.id}
-                    />
-                )
-            })
-        } else {
-            regularContent.slice(0, 10).map((content, index) => {
-                const contentTitle = contentType === 'movie' ? content.title : content.name
-                return (
-                    <ContentCard 
-                        key={index} 
-                        title={contentTitle} 
-                        imageUrl={content.poster_path} 
-                        id={content.id}
-                    />
-                )
-            })
-        }
-    }
-
 
     return (
         <div className='regular-content'>
-            {renderRegularContent()}
+            {regularContent.slice(0, 10).map((content, index) => (
+                    <ContentCard 
+                        key={index} 
+                        title={contentType === 'movie' ? content.title : content.name} 
+                        imageUrl={content.poster_path} 
+                        id={content.id}
+                    />
+                )
+            )}
         </div>
     )
 }
