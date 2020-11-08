@@ -15,12 +15,13 @@ const Tab = () => {
     //useContentTypeChange()
 
     function handleTabChange(changeTo: string){
-        if(contentType === 'movie' && changeTo === 'tv'){
-            changeContentType()
-        }else if(contentType === 'tv' && changeTo === 'movie'){
-            changeContentType()
+        if((contentType === 'movie' || contentType === 'search') && changeTo === 'tv'){
+            changeContentType(changeTo)
+        }else if((contentType === 'tv' || contentType === 'search') && changeTo === 'movie'){
+            changeContentType(changeTo)
         }
     }
+
 
     return (
         <div className="tab">
