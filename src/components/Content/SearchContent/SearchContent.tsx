@@ -1,21 +1,26 @@
 import React, {useEffect, useContext, useState} from 'react'
 import {SearchContext} from '../../context/SearchContext'
+import ContentCard from '../../Cards/ContentCard/ContentCard'
 import './styles.css'
 
 
 function SearchContent() {
 
-    // State za spremanje rezultata pretrazivanja
-    const {contentType, searchResults, searchTerm, fetchData} = useContext(SearchContext)
+    // Upotreba globalnog state-a
+    const {contentType, searchResults, searchTerm, searchOnFocus, fetchData} = useContext(SearchContext)
 
 
     useEffect(() => {
-        fetchData()
-    }, [searchTerm])
+        if(searchOnFocus && searchTerm.length >= 3){
+            setTimeout(() => {
+                fetchData()
+            }, 1000)
+        }
+    }, [searchTerm, searchOnFocus])
 
     return (
         <div className={searchTerm.length < 3 ? 'hidden ' : '' + 'search-content'}>
-            <ul className='search-content__content'>
+            {/* <ul className='search-content__content'>
                 {searchResults.map(content => (
                         <li className='search-content__content-item'>
                             <a 
@@ -24,8 +29,16 @@ function SearchContent() {
                                 {contentType === 'movie' ? content.title : content.name}
                             </a>
                         </li>
-                    ))}
-            </ul>
+                ))}
+            </ul> */}
+            {searchResults.map(content => (
+                        <ContentCard 
+                            id={content.id} 
+                            title={contentType === 'movie' ? 
+                            content.title : content.name}
+                            imageUrl={content.poster_path}
+                        />
+            ))}
         </div>
     )
 }
