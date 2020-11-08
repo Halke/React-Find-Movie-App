@@ -16,23 +16,13 @@ function SearchContent() {
                 fetchData()
             }, 1000)
         }
-    }, [searchTerm, searchOnFocus])
+    }, [searchTerm, searchOnFocus, contentType])
 
     return (
         <div className={searchTerm.length < 3 ? 'hidden ' : '' + 'search-content'}>
-            {/* <ul className='search-content__content'>
-                {searchResults.map(content => (
-                        <li className='search-content__content-item'>
-                            <a 
-                                href={'https://api.themoviedb.org/3/' + contentType + '/' + content.id + '?api_key=d12848de02e2a36cbdfe60e9860f6f6c&language=en-US'}
-                            >
-                                {contentType === 'movie' ? content.title : content.name}
-                            </a>
-                        </li>
-                ))}
-            </ul> */}
-            {searchResults.map(content => (
-                        <ContentCard 
+            {searchResults.slice(0, 10).map(content => (
+                        <ContentCard
+                            key={content.id} 
                             id={content.id} 
                             title={contentType === 'movie' ? 
                             content.title : content.name}

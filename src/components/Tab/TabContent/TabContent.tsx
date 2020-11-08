@@ -1,4 +1,4 @@
-import React, {useContext} from 'react'
+import React, {ReactComponentElement, useContext} from 'react'
 import SearchContent from '../../Content/SearchContent/SearchContent'
 import RegularContent from '../../Content/RegularContent/RegularContent'
 import {SearchContext} from '../../context/SearchContext'
@@ -8,19 +8,9 @@ function TabContent() {
 
     const {searchOnFocus} = useContext(SearchContext)
 
-    function renderSearchContent(){
-        return <SearchContent />
-    }
-
-    function renderRegularContent(){
-        return (
-            <RegularContent />
-        )
-    }
-
     return (
         <div className='tab-content'>
-            {searchOnFocus ? renderSearchContent : renderRegularContent}
+            {searchOnFocus ? <SearchContent /> : <RegularContent />}
         </div>
     )
 }

@@ -1,4 +1,4 @@
-import React, {useContext, useEffect, useState} from 'react'
+import React, {ReactNode, useContext, useEffect, useState} from 'react'
 import ContentCard from '../../Cards/ContentCard/ContentCard'
 import {SearchContext} from '../../context/SearchContext'
 import axios from 'axios'
@@ -8,7 +8,7 @@ function RegularContent() {
 
     const {contentType} = useContext(SearchContext)
 
-    const [regularContent, setRegularContent] = useState([])
+    const [regularContent, setRegularContent] = useState<ISearchResult[]>([])
 
 
     useEffect(() => {
@@ -18,7 +18,7 @@ function RegularContent() {
     }, [contentType])
 
 
-    function renderRegularContent(){
+    function renderRegularContent(): any{
         if(regularContent.length <= 10){
             regularContent.map((content, index) => {
                 const contentTitle = contentType === 'movie' ? content.title : content.name
@@ -49,7 +49,7 @@ function RegularContent() {
 
     return (
         <div className='regular-content'>
-            {renderRegularContent}
+            {renderRegularContent()}
         </div>
     )
 }

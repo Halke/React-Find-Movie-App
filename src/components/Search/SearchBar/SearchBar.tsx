@@ -5,7 +5,7 @@ import './styles.css'
 
 function SearchBar() {
 
-    const {searchTerm, changeSearchTerm} = useContext(SearchContext)
+    const {searchTerm, changeSearchTerm, changeSearchOnFocus} = useContext(SearchContext)
 
     //const [search, setSearch] = useState<string>(searchTerm)
 
@@ -24,6 +24,8 @@ function SearchBar() {
                     />
                 </div>
                 <input
+                    onFocus={changeSearchOnFocus}
+                    // onBlur={changeSearchOnFocus}
                     className='search-bar__input' 
                     onChange={handleOnChange} 
                     value={searchTerm} 

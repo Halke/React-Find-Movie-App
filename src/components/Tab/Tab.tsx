@@ -1,6 +1,7 @@
 import React, {useState, useContext} from 'react'
 import TabButton from '../Buttons/TabButton/TabButton'
 import useContentTypeChange from '../context/useContentTypeChange'
+import TabContent from './TabContent/TabContent'
 import {SearchContext} from '../context/SearchContext'
 import SearchBar from '../Search/SearchBar/SearchBar'
 import './styles.css'
@@ -15,9 +16,9 @@ const Tab = () => {
     //useContentTypeChange()
 
     function handleTabChange(changeTo: string){
-        if((contentType === 'movie' || contentType === 'search') && changeTo === 'tv'){
+        if(contentType === 'movie' && changeTo === 'tv'){
             changeContentType(changeTo)
-        }else if((contentType === 'tv' || contentType === 'search') && changeTo === 'movie'){
+        }else if(contentType === 'tv' && changeTo === 'movie'){
             changeContentType(changeTo)
         }
     }
@@ -49,7 +50,7 @@ const Tab = () => {
 
             {/* Tab za prikaz sadrzaja */}
             <div className="tab__content">
-
+                <TabContent />
             </div>
         </div>
     )
