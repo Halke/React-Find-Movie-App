@@ -10,8 +10,6 @@ function RegularContent() {
 
     const [regularContent, setRegularContent] = useState([])
 
-    // https://api.themoviedb.org/3/movie/top_rated?api_key=d12848de02e2a36cbdfe60e9860f6f6c&language=en-US&page=1
-    // https://api.themoviedb.org/3/tv/top_rated?api_key=d12848de02e2a36cbdfe60e9860f6f6c&language=en-US&page=1
 
     useEffect(() => {
         axios.get('https://api.themoviedb.org/3/' + contentType + '/top_rated?api_key=d12848de02e2a36cbdfe60e9860f6f6c&language=en-US&page=1')
@@ -19,9 +17,39 @@ function RegularContent() {
             .catch(err => console.log('ERROR: ', err))
     }, [contentType])
 
+
+    function renderRegularContent(){
+        if(regularContent.length <= 10){
+            regularContent.map((content, index) => {
+                const contentTitle = contentType === 'movie' ? content.title : content.name
+                return (
+                    <ContentCard 
+                        key={index} 
+                        title={contentTitle} 
+                        imageUrl={content.poster_path} 
+                        id={content.id}
+                    />
+                )
+            })
+        } else {
+            regularContent.slice(0, 10).map((content, index) => {
+                const contentTitle = contentType === 'movie' ? content.title : content.name
+                return (
+                    <ContentCard 
+                        key={index} 
+                        title={contentTitle} 
+                        imageUrl={content.poster_path} 
+                        id={content.id}
+                    />
+                )
+            })
+        }
+    }
+
+
     return (
         <div className='regular-content'>
-            
+            {renderRegularContent}
         </div>
     )
 }
