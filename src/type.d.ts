@@ -1,14 +1,14 @@
 interface ISearchResult{
-    id: Number;
+    id: number | string;
     title?: string;
     name?: string;
     overview: string;
     poster_path?: string;
     video?: boolean;
-    runtime?: Number;
+    runtime?: number;
     release_date: string;
     numOfSeasons?: string;
-    revenue?: BigInt
+    revenue?: number
 }
 
 interface SearchContextData{
