@@ -13,3 +13,16 @@
   justify-content: flex-start;
   margin: 20px auto 20px 30px;
 }
+
+@media only screen and (max-width: 768px) {
+  .tab {
+    width: 100%;
+  }
+
+  .tab__change-tab-btns {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 20px 0px 20px 0px;
+  }
+}

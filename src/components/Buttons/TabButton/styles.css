@@ -31,3 +31,10 @@
 .tab-button__inactive:hover {
   opacity: 1;
 }
+
+@media only screen and (max-width: 768px) {
+  .tab-button {
+    width: 60%;
+    height: 60px;
+  }
+}
