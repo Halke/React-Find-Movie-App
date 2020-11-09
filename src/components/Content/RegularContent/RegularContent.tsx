@@ -6,7 +6,7 @@ import './styles.css'
 
 function RegularContent() {
 
-    const {searchOnFocus, contentType} = useContext(SearchContext)
+    const {contentType} = useContext(SearchContext)
     const [regularContent, setRegularContent] = useState<ISearchResult[]>([])
 
 
