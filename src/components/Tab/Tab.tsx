@@ -7,7 +7,7 @@ import SearchBar from '../Search/SearchBar/SearchBar'
 import './styles.css'
 
 
-const Tab = () => {
+const Tab: React.FC<any> = () => {
 
     const {contentType, changeContentType} = useContext(SearchContext)
 
