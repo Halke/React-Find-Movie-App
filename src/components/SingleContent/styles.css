@@ -16,11 +16,18 @@
   left: 15px;
   color: #f4f4ed;
   font-size: 20px;
-  width: 100px;
+  width: 110px;
   height: 40px;
   justify-content: space-between;
   align-items: center;
   padding: 5px;
+  opacity: 0.6;
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+.single-content__back-btn:hover {
+  opacity: 1;
 }
 
 .single-content__back-btn-icon {
@@ -38,11 +45,23 @@
 }
 
 .single-content__description {
-  width: 800px;
+  width: 1000px;
   font-family: "Open Sans", sans-serif;
 }
 
 .single-content__description-title {
   text-align: center;
+  font-style: bold;
+  font-size: 32px;
+  margin-bottom: 5px;
+  border-bottom: 3px solid #f61067;
+  padding-bottom: 5px;
+  margin-bottom: 10px;
+}
+
+.single-content__description-overview {
+  font-size: 20px;
   font-style: italic;
+  padding: 5px;
+  color: #000000b6;
 }
