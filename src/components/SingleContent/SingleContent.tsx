@@ -21,27 +21,35 @@ function SingleContent(props: any) {
     })
 
     const { id } = props.match.params
+    const history = useHistory()
     const { contentType } = useContext(SearchContext)
 
     useEffect(() => {
         axios.get('https://api.themoviedb.org/3/' + contentType + '/' + id + '?api_key=d12848de02e2a36cbdfe60e9860f6f6c&language=en-US&append_to_response=videos')
         .then(res => {
-            setContent(res.data)
+            setContent((prevValue: any) => ({...prevValue, ...res.data}))
         })
         .catch(err => console.log('ERROR: ', err))
     }, [id])
 
+    function handleOnBack(){
+        history.goBack()
+    }
 
     return (
         <div className='single-content'>
-            <button className='single-content__back-btn'>
+            <button className='single-content__back-btn' onClick={() => handleOnBack()}>
                 <span className='single-content__back-btn-icon'>
                     <img src={process.env.PUBLIC_URL + '/assets/icons/back-icon.png'} alt='Back icon'/>
                 </span>
                 BACK
             </button>
             <div className='single-content__image-or-video'>
-                {content.videos.results[0].key !== '' ? 
+                {
+                (content.videos.results.length > 0
+                && 
+                content.videos.results[0].key !== '') 
+                ? 
                     <iframe 
                         width="700" 
                         height="450" 
@@ -61,12 +69,12 @@ function SingleContent(props: any) {
                     />
                 }
             </div>
-            <div>
-                <h1 className='single-content__title'>
+            <div className='single-content__description'>
+                <h1 className='single-content__description-title'>
                     {content.title || content.name}
                 </h1>
-                <p className='single-content__overview'>
-                    
+                <p className='single-content__description-overview'>
+                    {content.overview}
                 </p>
             </div>
         </div>

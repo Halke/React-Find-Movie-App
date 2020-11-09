@@ -1,0 +1,48 @@
+.single-content {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.single-content__back-btn {
+  border: none;
+  border-radius: 5px;
+  background-color: #5e239d;
+  display: flex;
+  position: fixed;
+  top: 15px;
+  left: 15px;
+  color: #f4f4ed;
+  font-size: 20px;
+  width: 100px;
+  height: 40px;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5px;
+}
+
+.single-content__back-btn-icon {
+  width: 30px;
+  height: 30px;
+}
+
+.single-content__back-btn-icon img {
+  width: 100%;
+  height: 100%;
+}
+
+.single-content__image-or-video {
+  margin: 30px 0 30px 0;
+}
+
+.single-content__description {
+  width: 800px;
+  font-family: "Open Sans", sans-serif;
+}
+
+.single-content__description-title {
+  text-align: center;
+  font-style: italic;
+}
