@@ -51,8 +51,6 @@ function SingleContent(props: any) {
                 content.videos.results[0].key !== '') 
                 ? 
                     <iframe 
-                        width="700" 
-                        height="450" 
                         src={'https://www.youtube.com/embed/' + content.videos.results[0].key} 
                         frameBorder="0" 
                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 

@@ -44,6 +44,11 @@
   margin: 30px 0 30px 0;
 }
 
+.single-content__image-or-video iframe {
+  width: 700px;
+  height: 450px;
+}
+
 .single-content__description {
   width: 1000px;
   font-family: "Open Sans", sans-serif;
@@ -64,4 +69,30 @@
   font-style: italic;
   padding: 5px;
   color: #000000b6;
+}
+
+@media only screen and (max-width: 1280px) {
+  .single-content__image-or-video iframe {
+    width: 500px;
+    height: 350px;
+  }
+
+  .single-content__description {
+    width: 600px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .single-content__image-or-video {
+    margin-top: 60px;
+  }
+
+  .single-content__image-or-video iframe {
+    width: 90%;
+    height: 200px;
+  }
+
+  .single-content__description {
+    width: 95%;
+  }
 }
