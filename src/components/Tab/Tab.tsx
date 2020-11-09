@@ -28,6 +28,7 @@ const Tab = () => {
         <div className="tab">
             {/* Buttons za mijenjanje tabova */}
             <div className="tab__change-tab-btns">
+
                 {/* TV Shows TAB */}
                 <TabButton 
                     onClick={() => handleTabChange('tv')} 
@@ -41,6 +42,7 @@ const Tab = () => {
                     buttonText="Movies" 
                     isActive={contentType === 'movie' ? true : false} 
                 />
+                
             </div>
 
             {/* Search Bar Section */}
