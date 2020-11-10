@@ -5,7 +5,7 @@ import axios from 'axios'
 import './styles.css'
 
 
-function SingleContent(props: any) {
+const SingleContent:React.FC<any> = (props) => {
 
     const [content, setContent] = useState<any>({
         backdrop_path: '',

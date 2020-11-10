@@ -4,7 +4,7 @@ import ContentCard from '../../Cards/ContentCard/ContentCard'
 import './styles.css'
 
 
-function SearchContent() {
+const SearchContent:React.FC<any> = () => {
 
     // Upotreba globalnog state-a
     const {contentType, searchResults, searchTerm, searchOnFocus, fetchData, changeSearchOnFocus} = useContext(SearchContext)

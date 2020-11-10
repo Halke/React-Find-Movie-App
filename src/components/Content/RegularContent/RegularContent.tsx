@@ -2,9 +2,9 @@ import React, {useContext, useEffect, useState} from 'react'
 import ContentCard from '../../Cards/ContentCard/ContentCard'
 import {SearchContext} from '../../context/SearchContext'
 import axios from 'axios'
-import './styles.css'
+import './styles.css'                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   
 
-function RegularContent() {
+const RegularContent: React.FC<any> = () => {
 
     const {contentType} = useContext(SearchContext)
     const [regularContent, setRegularContent] = useState<ISearchResult[]>([])

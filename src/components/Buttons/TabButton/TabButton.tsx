@@ -9,7 +9,7 @@ interface ButtonInfo {
 
 // {buttonText, isActive}:ButtonInfo
 
-function TabButton({buttonText, isActive, onClick}:ButtonInfo) {
+const TabButton:React.FC<ButtonInfo> = ({buttonText, isActive, onClick}) => {
 
     return (
         <div className="tab-button">

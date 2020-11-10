@@ -9,7 +9,7 @@ interface Props{
     id: number | string
 }
 
-function ContentCard({imageUrl, title, id}: Props) {
+const ContentCard:React.FC<Props> = ({imageUrl, title, id}) => {
 
     const {contentType} = useContext(SearchContext)
     const history = useHistory()

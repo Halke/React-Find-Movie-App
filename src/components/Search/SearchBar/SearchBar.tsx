@@ -3,7 +3,7 @@ import {SearchContext} from '../../context/SearchContext'
 import './styles.css'
 
 
-function SearchBar() {
+const SearchBar:React.FC = () => {
 
     const {searchTerm, searchOnFocus, changeSearchTerm, changeSearchOnFocus} = useContext(SearchContext)
 

@@ -4,7 +4,7 @@ import RegularContent from '../../Content/RegularContent/RegularContent'
 import {SearchContext} from '../../context/SearchContext'
 import './styles.css'
 
-function TabContent() {
+const TabContent:React.FC<any> = () => {
 
     const {searchOnFocus} = useContext(SearchContext)
 
