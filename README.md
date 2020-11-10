@@ -16,7 +16,7 @@ From cmd, inside cloned directory, run the command "npm start". This command wil
 
 Atomic Design Pattern, developed by Brad Frost and Dave Olsen, is widely used with React Apps. The goal of using this patten can be seen on the following image.
 
-https://miro.medium.com/max/875/1*PcQ-m317YX6ct9ccBi6H1Q.png
+![Atomic Design Pattern illustration](https://miro.medium.com/max/875/1*PcQ-m317YX6ct9ccBi6H1Q.png)
 
 The goal is to create the components so simple so they can't be divided any more (like atoms). Combining these atomic components more complex components are built. This desing pattern promotes consistency, modularity and scalability.
 
