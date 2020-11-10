@@ -1,46 +1,36 @@
-# Getting Started with Create React App
+# To run this app, follow the steps:
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+### 1.) Clone this repo on your PC
 
-## Available Scripts
+### 2.) Install dependencies
 
-In the project directory, you can run:
+Once you clone the repo, open the cmd (Command Prompt) and navigate to the directory where you have cloned the repo. Inside cloned directory run the command: "npm install". Wait few minutes for installation to complete.
 
-### `npm start`
+In case you don't have the Node Package Manager (npm), follow this [How To Install](https://blog.npmjs.org/post/85484771375/how-to-install-npm) guide.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+### 3.) Start the app
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+From cmd, inside cloned directory, run the command "npm start". This command will run the app on the port 3000 and will automatically open the app inside your default Web browser.
 
-### `npm test`
+## DESIGN PATTERN: Atomic Design Pattern
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Atomic Design Pattern, developed by Brad Frost and Dave Olsen, is widely used with React Apps. The goal of using this patten can be seen on the following image.
 
-### `npm run build`
+https://miro.medium.com/max/875/1*PcQ-m317YX6ct9ccBi6H1Q.png
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+The goal is to create the components so simple so they can't be divided any more (like atoms). Combining these atomic components more complex components are built. This desing pattern promotes consistency, modularity and scalability.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+#### ATOMS
+Buttons, inputs, form lables....
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+#### MOLECULES
+Combined of more atoms (buttons, inputs, form labels...) to achieve some functionality.
 
-### `npm run eject`
+#### ORGANISMS
+Combining molecules together to form organisms that make up a distinct section of an interface (i.e. navigation bar)
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+#### TEMPLATES
+Consisting mostly of groups of organisms to form a page — where clients can see a final design in place.
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+#### PAGES
+An ecosystem that views different template renders. We can create multiple ecosystems into a single environment — the application.
